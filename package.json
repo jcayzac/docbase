@@ -1,0 +1,11 @@
+{
+  "name": "docs",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "ws"
+  },
+  "devDependencies": {
+    "local-web-server": "^4.2.1"
+  }
+}

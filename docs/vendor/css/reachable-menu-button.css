@@ -1,0 +1,7 @@
+/* on small screens, move the menu button to the bottom */
+@media (max-width: 48em) {
+  .sidebar-toggle {
+    bottom: calc(40px + (var(--sidebar-toggle-height) / 2));
+    top: auto;
+  }
+}

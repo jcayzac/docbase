@@ -1,0 +1,7 @@
+.app-name-link > span { display: none; }
+.app-name-link > span[lang="en"] { display: inline; }
+.app-name-link[href*="/ja/"] > span { display: none; }
+.app-name-link[href*="/ja/"] > span[lang=ja] {
+  display: inline;
+  font-size: .9em;
+}
