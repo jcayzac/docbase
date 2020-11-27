@@ -35,6 +35,12 @@ window.$docsify = Object.assign(window.$docsify || {}, {
       '/': 'Search…',
       }
   },
+  seo: {
+    description: (route, frontmatter) => {
+      if (route.path?.startsWith('/ja/')) return `一般的な説明`
+      else return `Some default description`
+    }
+  },
   pagination: {
     previousText: '上一章节',
     nextText: '下一章节',

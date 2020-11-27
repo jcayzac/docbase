@@ -1,3 +1,7 @@
+---
+description: A brief introduction
+---
+
 # Quick start
 
 !> An awesome project's another page.
