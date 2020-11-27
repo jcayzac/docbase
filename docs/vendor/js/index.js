@@ -29,6 +29,7 @@ window.$docsify = Object.assign(window.$docsify || {}, {
   subMaxLevel: 3,
   formatUpdated: '{YYYY}-{MM}-{DD} ({HH}:{mm}:{ss})',
   search: {
+    maxAge: 3600,
     depth: 3,
     placeholder: {
       '/ja/': '検索',
