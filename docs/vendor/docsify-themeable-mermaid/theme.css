@@ -1,0 +1,50 @@
+:root {
+  --mermaid-primary-color: var(--theme-color);
+  --mermaid-primary-text-color: var(--base-color);
+  --mermaid-primary-background-color: var(--base-background-color);
+  --mermaid-secondary-color: hsl(calc(var(--theme-hue) - 120), var(--theme-saturation), var(--theme-lightness));
+  --mermaid-tertiary-color: hsl(calc(var(--theme-hue) + 180), var(--theme-saturation), calc(var(--theme-lightness) + 5));
+  --mermaid-font-family: var(--base-font-family);
+  --mermaid-default-line-width: 2;
+  --mermaid-primary-border-color: var(--mermaid-primary-color);
+  --mermaid-primary-line-color: hsl(var(--mono-hue), var(--mono-saturation), 50%);
+  --mermaid-activation-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-activation-border-color: var(--mermaid-primary-border-color); /* TODO */
+  --mermaid-active-task-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-active-task-border-color: var(--mermaid-primary-border-color); /* TODO */
+  --mermaid-actor-background: var(--mermaid-primary-background-color);
+  --mermaid-actor-border: var(--mermaid-primary-border-color);
+  --mermaid-actor-text-color: var(--mermaid-primary-color);
+  --mermaid-alt-section-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-crit-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-crit-border-color: var(--mermaid-primary-border-color); /* TODO */
+  --mermaid-done-task-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-done-task-border-color: var(--mermaid-primary-border-color); /* TODO */
+  --mermaid-error-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-error-text-color: var(--mermaid-primary-text-color); /* TODO */
+  --mermaid-grid-color: var(--mermaid-primary-border-color); /* TODO */
+  --mermaid-label-box-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-label-box-border-color: var(--mermaid-actor-border);
+  --mermaid-label-color: var(--mermaid-secondary-color); /* TODO */
+  --mermaid-label-text-color: var(--mermaid-primary-text-color); /* TODO */
+  --mermaid-line-color: var(--mermaid-primary-line-color); /* TODO */
+  --mermaid-loop-text-color: var(--mermaid-primary-text-color); /* TODO */
+  --mermaid-node-background: var(--mermaid-primary-background-color);
+  --mermaid-node-border: var(--mermaid-primary-border-color);
+  --mermaid-note-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-note-border-color: var(--mermaid-primary-border-color); /* TODO */
+  --mermaid-note-text-color: var(--mermaid-primary-text-color); /* TODO */
+  --mermaid-section-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-section-background-color2: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-sequence-number-color: var(--mermaid-primary-color);
+  --mermaid-signal-color: var(--mermaid-primary-color);
+  --mermaid-signal-text-color: var(--mermaid-primary-text-color);
+  --mermaid-task-background-color: var(--mermaid-primary-background-color); /* TODO */
+  --mermaid-task-border-color: var(--mermaid-primary-border-color); /* TODO */
+  --mermaid-task-text-clickablelickable-color: var(--mermaid-primary-text-color); /* TODO */
+  --mermaid-task-text-color: var(--mermaid-primary-text-color); /* TODO */
+  --mermaid-task-text-dark-color: var(--mermaid-primary-text-color); /* TODO */
+  --mermaid-task-text-outside-color: var(--mermaid-primary-text-color); /* TODO */
+  --mermaid-title-color: var(--mermaid-secondary-color); /* TODO */
+  --mermaid-today-line-color: var(--mermaid-secondary-color); /* TODO */
+}

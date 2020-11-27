@@ -1,6 +1,6 @@
 const basePath = '/julien-cayzac/docsify-template/'
 
-const siteConfig = {
+window.$docsify = {
   basePath,
   repo: `https://ghe.rakuten-it.com${basePath}`,
   name: '<span lang="en">RPay PWA Platform</span><span lang="ja">楽天ペイPWAサービス</span>',
@@ -30,13 +30,7 @@ const siteConfig = {
   pagination: {
     previousText: '上一章节',
     nextText: '下一章节',
-    crossChapter: true,
-    crossChapterText: true,
   },
-}
-
-window.$docsify = {
-  ...siteConfig,
 }
 
 navigator.serviceWorker?.register(`${basePath}vendor/js/service-worker.js`)
