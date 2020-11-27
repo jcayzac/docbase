@@ -4,6 +4,8 @@ description: A brief introduction
 
 # Quick start
 
+{{description}}
+
 !> An awesome project's another page.
 
 ## Tabs

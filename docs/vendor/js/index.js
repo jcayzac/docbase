@@ -41,6 +41,12 @@ window.$docsify = Object.assign(window.$docsify || {}, {
       else return `Some default description`
     }
   },
+  mustache: {
+    noPackage: true,
+    data: [
+      // 'some/file.json',
+    ],
+  },
   pagination: {
     previousText: '上一章节',
     nextText: '下一章节',
