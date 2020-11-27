@@ -460,8 +460,8 @@
       }
       `,
       fontFamily: 'var(--mermaid-font-family)',
-      logLevel: 3,
-      securityLevel: 'loose',
+      logLevel: 5,
+      securityLevel: 'antiscript',
       flowchart: {
         curve: 'basis'
       },
