@@ -11,4 +11,7 @@ module.exports = {
   maxConnections: 60,
   hostname: 'localhost',
   port: 5000,
+  static: {
+    maxage: 0,
+  },
 }
