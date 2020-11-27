@@ -1,5 +1,8 @@
 const basePath = '/julien-cayzac/docsify-template/'
 
+const cacheBurst = (new URLSearchParams(window.location.search)).has('burst') ? { 'cache-control': 'max-age=0' } : undefined
+if (cacheBurst) console.warn(`CACHE BURST ENABLED`)
+
 window.$docsify = {
   basePath,
   repo: `https://ghe.rakuten-it.com${basePath}`,
@@ -30,6 +33,9 @@ window.$docsify = {
   pagination: {
     previousText: '上一章节',
     nextText: '下一章节',
+  },
+  requestHeaders: {
+    ...cacheBurst,
   },
 }
 
