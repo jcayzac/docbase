@@ -27,18 +27,24 @@
 <body>
   <main id="app">
     <div id="spinner">
-      <!-- "Puff" spinner, from https://samherbert.net/svg-loaders/ -->
-      <svg viewBox="0 0 44 44">
-        <g fill="none" fill-rule="evenodd" stroke-width="2">
-          <circle cx="22" cy="22" r="1">
-            <animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite" />
-            <animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite" />
-          </circle>
-          <circle cx="22" cy="22" r="1">
-            <animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite" />
-            <animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite" />
-          </circle>
-        </g>
+      <!-- Based on "Puff" from https://samherbert.net/svg-loaders/ -->
+      <svg viewBox="0 0 14 14">
+        <style>
+          #spinner circle {
+            fill: none;
+            stroke: inherit;
+            stroke-width: 1;
+            opacity: 0;
+            transform-origin: 50%;
+            animation: spinner-size    cubic-bezier(0.165, 0.84, 0.44,  1) 1.8s infinite,
+                       spinner-opacity cubic-bezier(0.3,   0.61, 0.355, 1) 1.8s infinite;
+          }
+          #spinner circle:last-child  { animation-delay: 0.9s; }
+          @keyframes spinner-size    { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+          @keyframes spinner-opacity { 5% { opacity: 1;          } 100% { opacity: 0;          } }
+        </style>
+        <circle cx="7" cy="7" r="6"></circle>
+        <circle cx="7" cy="7" r="6"></circle>
       </svg>
     </div>
   </main>
