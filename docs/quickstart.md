@@ -99,16 +99,6 @@ John->>Bob: How about you?
 Bob-->>John: Jolly good!
 ```
 
-### Pie Chart
-
-```mermaid
-pie
-title Key elements in Product X
-"Dogs" : 386
-"Cats" : 85
-"Rats" : 15
-```
-
 ### State Diagram
 
 ```mermaid
@@ -119,6 +109,16 @@ Still --> Moving
 Moving --> Still
 Moving --> Crash
 Crash --> [*]
+```
+
+### Pie Chart
+
+```mermaid
+pie
+title Key elements in Product X
+"Dogs" : 386
+"Cats" : 85
+"Rats" : 15
 ```
 
 ### Class Diagram
