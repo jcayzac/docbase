@@ -1,7 +1,10 @@
+/* Use a slightly smaller font for Japanese */
+.app-name-link > span[lang="ja"] { font-size: .9em; }
+
+/* Show English name by default */
 .app-name-link > span { display: none; }
 .app-name-link > span[lang="en"] { display: inline; }
+
+/* When the route has /ja/, show the Japanese name and hide the others */
 .app-name-link[href*="/ja/"] > span { display: none; }
-.app-name-link[href*="/ja/"] > span[lang=ja] {
-  display: inline;
-  font-size: .9em;
-}
+.app-name-link[href*="/ja/"] > span[lang=ja] { display: inline; }
