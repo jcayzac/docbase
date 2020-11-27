@@ -44,14 +44,17 @@ window.$docsify = Object.assign(window.$docsify || {}, {
   },
 })
 
+const editPage = EditOnGithubPlugin.create(
+  `${repo}edit/${editBranch}/docs/`,
+  null,
+  (page) => {
+    if (page.startsWith('ja/')) return `ページの編集`
+    return `Edit Page`
+  }
+)
+
 window.$docsify.plugins = (window.$docsify.plugins || []).concat([
-  EditOnGithubPlugin.create(
-    `${repo}edit/${editBranch}/docs/`,
-    null,
-    (page) => {
-      if (page.startsWith('ja/')) return `ページの編集`
-      return `Edit Page`
-    })
+  editPage,
 ])
 
 
