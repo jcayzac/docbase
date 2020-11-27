@@ -1,11 +1,16 @@
-const basePath = '/julien-cayzac/docsify-template/'
+'use strict';
 
+const basePath = '/julien-cayzac/docsify-template/'
+const repo = `https://ghe.rakuten-it.com${basePath}`
+const editBranch = `master`
+
+/* Disable caching if "?burst" is passed to the URL */
 const cacheBurst = (new URLSearchParams(window.location.search)).has('burst') ? { 'cache-control': 'max-age=0' } : undefined
 if (cacheBurst) console.warn(`CACHE BURST ENABLED`)
 
-window.$docsify = {
+window.$docsify = Object.assign(window.$docsify || {}, {
   basePath,
-  repo: `https://ghe.rakuten-it.com${basePath}`,
+  repo,
   name: '<span lang="en">RPay PWA Platform</span><span lang="ja">楽天ペイPWAサービス</span>',
   nameLink: {
     '/ja/': `${basePath}ja/`,
@@ -37,6 +42,17 @@ window.$docsify = {
   requestHeaders: {
     ...cacheBurst,
   },
-}
+})
+
+window.$docsify.plugins = (window.$docsify.plugins || []).concat([
+  EditOnGithubPlugin.create(
+    `${repo}edit/${editBranch}/docs/`,
+    null,
+    (page) => {
+      if (page.startsWith('ja/')) return `ページの編集`
+      return `Edit Page`
+    })
+])
+
 
 navigator.serviceWorker?.register(`${basePath}vendor/js/service-worker.js`)
