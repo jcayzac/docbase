@@ -8,6 +8,10 @@ description: A brief introduction
 
 !> An awesome project's another page.
 
+Here's some math:
+
+$$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
 ## Tabs
 
 ### Examples
@@ -33,7 +37,7 @@ Ciao!
 <!-- tabs:start -->
 
 <!-- tab:Kotlin -->
-```kotlin
+```kotlin {highlight:"2,10"}
 launch {
   val request = Client.Request("{...JSON configuration...}").apply {
     // Configure handler for error messages
@@ -51,7 +55,7 @@ launch {
 ```
 
 <!-- tab:Swift -->
-```swift
+```swift {highlight:"1,7"}
 var request = ClientRequest(configuration: "{...JSON configuration...}")
 request.errorMessageHander = { message in
   print("*** ERROR: \(message)")

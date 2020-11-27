@@ -70,5 +70,4 @@ window.$docsify.plugins = (window.$docsify.plugins || []).concat([
   editPage,
 ])
 
-
 navigator.serviceWorker?.register(`${basePath}vendor/js/service-worker.js`)
