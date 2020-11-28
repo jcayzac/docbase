@@ -1,8 +1,7 @@
 'use strict';
-(function (globalObject) {
-  var mermaidId = 0
+(function (window) {
   function initMermaid() {
-    globalObject.mermaid.initialize({
+    window.mermaid.initialize({
       startOnLoad: false,
       theme: 'base',
       themeCSS: `
@@ -437,11 +436,6 @@
       }
     
       /* mermaid */
-      :root {
-        font-family: var(--mermaid-font-family);
-        font-size: 16px;
-      }
-    
       .error-icon {
         fill: var(--mermaid-error-background-color);
       }
@@ -455,10 +449,13 @@
       .marker.cross {
         stroke: var(--mermaid-line-color);
       }
-      svg {
+      > * {
         font-family: var(--mermaid-font-family);
+        font-size: var(--base-font-size);
+        fill: none;
       }
       `,
+      deterministicIds: true,
       fontFamily: 'var(--mermaid-font-family)',
       logLevel: 5,
       securityLevel: 'antiscript',
@@ -471,31 +468,38 @@
       },
       sequence: {
         actorFontFamily: 'var(--mermaid-font-family)',
-        noteFontFamily: 'var(--mermaid-font-family)',
-        messageFontFamily: 'var(--mermaid-font-family)',
+        actorFontSize: 12,
         actorFontWeight: 'var(--base-font-weight)',
+        noteFontFamily: 'var(--mermaid-font-family)',
+        noteFontSize: 12,
         noteFontWeight: 'var(--base-font-weight)',
+        messageFontFamily: 'var(--mermaid-font-family)',
+        messageFontSize: 12,
         messageFontWeight: 'var(--base-font-weight)',
       },
     })  
   }
 
   function plugin(hook, vm) {
+    var mermaidId = 0
+
     hook.init(initMermaid)
+    hook.beforeEach(function() {
+      mermaidId = 0
+    })
     hook.mounted(function() {
-      // FIXME: Probably breaks other things. Need to figure how to play around the prototypes.
       const renderer = vm.config.markdown.renderer
       const original = renderer.code || renderer.origin.code
       renderer.code = renderer.origin.code = function(code, lang) {
         if (lang === 'mermaid')
-          return `<figure class="visual diagram mermaid">${mermaid.render(`mermaid-svg-${mermaidId++}`, code)}</figure>`
+          return `<figure class="visual diagram mermaid">${mermaid.render(`mermaid-svg-${++mermaidId}`, code)}</figure>`
         else
           return original.apply(this, arguments)
       }
     })
   }
 
-  globalObject.$docsify = globalObject.$docsify || {}
-  globalObject.$docsify.plugins = globalObject.$docsify.plugins || []
-  globalObject.$docsify.plugins.push(plugin)
+  window.$docsify = window.$docsify || {}
+  window.$docsify.plugins = window.$docsify.plugins || []
+  window.$docsify.plugins.push(plugin)
 })(this)
