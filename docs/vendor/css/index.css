@@ -32,6 +32,10 @@
   /* tabs */
   --docsifytabs-tab-highlight-color: var(--theme-color);
   --docsifytabs-content-padding: 1rem;
+
+  /* pagination */
+  --pagination-chevron-height: 2rem;
+  --pagination-chevron-stroke-width: 3px;
 }
 
 @media (prefers-color-scheme: dark) {
