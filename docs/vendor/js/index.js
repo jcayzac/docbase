@@ -57,14 +57,14 @@ window.$docsify = Object.assign(window.$docsify || {}, {
   },
 })
 
-const editPage = EditOnGithubPlugin.create(
-  `${repo}edit/${editBranch}/docs/`,
-  null,
-  (page) => {
-    if (page.startsWith('ja/')) return `ページの編集`
-    return `Edit Page`
-  }
-)
+function editPage(hook, vm) {
+  hook.afterEach(function(html) {
+    const { path, file } = vm.route
+    const label = path.startsWith('ja/') ? `ページの編集` : `Edit Page`
+
+    return `${html}<a rel="noopener" target="_blank" href="${repo}edit/${editBranch}/docs/${file}">${label}</a>`
+  })
+}
 
 window.$docsify.plugins = (window.$docsify.plugins || []).concat([
   editPage,
