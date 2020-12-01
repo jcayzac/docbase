@@ -1,5 +1,5 @@
-'use strict';
-(function (window) {
+'use strict'
+;(function (window) {
   function initMermaid() {
     window.mermaid.initialize({
       startOnLoad: false,
@@ -480,7 +480,7 @@
     })  
   }
 
-  function plugin(hook, vm) {
+  function ThemeableMermaid(hook, vm) {
     var mermaidId = 0
 
     hook.init(initMermaid)
@@ -501,5 +501,5 @@
 
   window.$docsify = window.$docsify || {}
   window.$docsify.plugins = window.$docsify.plugins || []
-  window.$docsify.plugins.push(plugin)
+  window.$docsify.plugins.push(ThemeableMermaid)
 })(this)

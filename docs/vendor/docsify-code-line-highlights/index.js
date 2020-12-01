@@ -1,11 +1,11 @@
-'use strict';
-(function (window) {
+'use strict'
+;(function (window) {
 
-  function plugin(hook, vm) {
+  function HighlightedCodeLines(hook, vm) {
     hook.mounted(function() {
       const renderer = vm.config.markdown.renderer
       const original = renderer.code || renderer.origin.code
-  
+
       renderer.code = renderer.origin.code = function(code, lang) {
         var [_, realLang, options] = /^([^ \{]+) *(\{.+\})$/.exec(lang) || []
         if (options !== undefined)
@@ -21,5 +21,5 @@
 
   window.$docsify = window.$docsify || {}
   window.$docsify.plugins = window.$docsify.plugins || []
-  window.$docsify.plugins.push(plugin)
+  window.$docsify.plugins.push(HighlightedCodeLines)
 })(this)
