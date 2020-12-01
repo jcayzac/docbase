@@ -66,30 +66,8 @@ function editPage(hook, vm) {
   })
 }
 
-function debugInfo(hook, vm) {
-  const replacer = () => {
-    const seen = new WeakSet()
-    return (_, value) => {
-      if (typeof value === "object" && value !== null) {
-        if (seen.has(value)) {
-          return
-        }
-        seen.add(value)
-      }
-      return value
-    }
-  }
-
-  hook.afterEach(function(html) {
-    return `${html}<!-- Debug information:
-${JSON.stringify(vm, replacer(), 2)}
--->`
-  })
-}
-
 window.$docsify.plugins = (window.$docsify.plugins || []).concat([
   editPage,
-  debugInfo,
 ])
 
 navigator.serviceWorker?.register(`${basePath}vendor/js/service-worker.js`)
