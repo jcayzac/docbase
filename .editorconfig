@@ -8,11 +8,6 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 max_line_length = 120
 
-[Makefile]
-indent_style = tab
-
-[*.{js,ts,jsx,tsx,toml}]
-indent_style = tab
+[*.{js,ts,jsx,tsx,toml,yaml}]
 quote_type = single
 spaces_around_brackets = inside
-

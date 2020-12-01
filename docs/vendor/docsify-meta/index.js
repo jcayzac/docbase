@@ -1,10 +1,10 @@
-'use strict';
+'use strict'
 
 /*
  * Update the page info based on frontmatter data or on the configurated
  * generator.
  */
-(function (window) {
+;(function (window) {
   function meta(name, content) {
     document.querySelector(`meta[name="${name}"]`).content = content || ''
   }
@@ -27,7 +27,7 @@
         meta(key, value)
       }
     }
-    
+
     hook.init(refreshInfo)
     hook.doneEach(refreshInfo)
   }

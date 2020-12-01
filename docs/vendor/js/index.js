@@ -25,8 +25,8 @@
   ]
 
   /* Disable caching if "?burst" is passed to the URL */
-  const cacheBurst = (new URLSearchParams(window.location.search)).has('burst') ? { 'cache-control': 'max-age=0' } : undefined
-  if (cacheBurst) console.warn(`CACHE BURST ENABLED`)
+  const cacheBurst = (new URLSearchParams(window.location?.search)).has('burst') ? { 'cache-control': 'max-age=0' } : undefined
+  if (cacheBurst) window.console?.warn(`CACHE BURST ENABLED`)
 
   window.$docsify = {
     basePath,
@@ -48,7 +48,16 @@
       depth: 3,
     },
     mustache: {
-      noPackage: true,
+			noPackage: true,
+			data: [
+				{
+					foo: [
+						{name: 'name1', attr: 'attr1'},
+						{name: 'name2', attr: 'attr2'},
+						{name: 'name3', attr: 'attr3'},
+					],
+				}
+			]
     },
     pagination: {
       crossChapter: true,
@@ -59,5 +68,5 @@
     }
   }
 
-  window.navigator.serviceWorker?.register(`${window.$docsify.basePath}vendor/js/service-worker.js`)
+  window.navigator?.serviceWorker?.register(`${window.$docsify.basePath}vendor/js/service-worker.js`)
 })(this)

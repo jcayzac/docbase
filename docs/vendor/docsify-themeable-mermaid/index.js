@@ -14,20 +14,20 @@
       .actor-line {
         stroke: var(--mermaid-actor-border);
       }
-      
+
       text.actor > tspan {
         font-family: var(--mermaid-font-family);
         fill: var(--mermaid-actor-text-color);
         stroke: none;
       }
-    
+
       .messageLine0,
       .messageLine1,
       #arrowhead path,
       #crosshead path {
         stroke: var(--mermaid-signal-color);
       }
-    
+
       #arrowhead path,
       #crosshead path,
       #sequencenumber {
@@ -40,81 +40,81 @@
       .sequenceNumber {
         fill: var(--mermaid-sequence-number-color);
       }
-      
+
       .messageText {
         font-family: var(--mermaid-font-family);
         fill: var(--mermaid-signal-text-color);
         stroke: var(--mermaid-signal-text-color);
       }
-    
+
       .labelBox,
       .node rect.label-container {
         stroke: var(--mermaid-label-box-border-color);
         fill: var(--mermaid-label-box-background-color);
       }
-    
+
       .nodeLabel, .cluster-label {
         color: var(--mermaid-label-text-color);
       }
-      
+
       .labelText, .labelText > tspan {
         fill: var(--mermaid-label-text-color);
         stroke: none;
       }
-      
+
       .loopText, .loopText > tspan {
         fill: var(--mermaid-loop-text-color);
         stroke: none;
       }
-      
+
       .loopLine {
         stroke: var(--mermaid-label-box-border-color);
         fill: var(--mermaid-label-box-border-color);
       }
-      
+
       .note {
         stroke: var(--mermaid-note-border-color);
         fill: var(--mermaid-note-background-color);
       }
-      
+
       .noteText, .noteText > tspan {
         fill: var(--mermaid-note-text-color);
         stroke: none;
       }
-      
+
       .activation0 {
         fill: var(--mermaid-activation-background-color);
         stroke: var(--mermaid-activation-border-color);
       }
-      
+
       .activation1 {
         fill: var(--mermaid-activation-background-color);
         stroke: var(--mermaid-activation-border-color);
       }
-      
+
       .activation2 {
         fill: var(--mermaid-activation-background-color);
         stroke: var(--mermaid-activation-border-color);
       }
-    
+
       /* gantt */
       .mermaid-main-font {
         font-family: var(--mermaid-font-family);
       }
-    
+
       .section0 {
         fill: var(--mermaid-section-background-color);
       }
-    
+
       .section2 {
         fill: var(--mermaid-section-background-color2);
       }
-    
+
       .section1,
       .section3 {
         fill: var(--mermaid-alt-section-background-color);
       }
-    
+
       .sectionTitle0,
       .sectionTitle1,
       .sectionTitle2,
@@ -123,39 +123,39 @@
       g.statediagram-cluster .cluster-label text {
         fill: var(--mermaid-title-color);
       }
-    
+
       .sectionTitle {
         text-anchor: start;
         font-size: 11px;
         text-height: 14px;
         font-family: var(--mermaid-font-family);
       }
-    
+
       .grid .tick {
         stroke: var(--mermaid-grid-color);
       }
-    
+
       .grid .tick text {
         font-family: var(--mermaid-font-family);
       }
-    
+
       .today {
         stroke: var(--mermaid-today-line-color);
       }
-    
+
       .taskText {
         font-family: var(--mermaid-font-family);
       }
-    
+
       .taskTextOutsideRight {
         fill: var(--mermaid-task-text-dark-color);
         font-family: var(--mermaid-font-family);
       }
-    
+
       .taskTextOutsideLeft {
         fill: var(--mermaid-task-text-dark-color);
       }
-    
+
       .taskText.clickable {
         fill: var(--mermaid-task-text-clickable-color) !important;
       }
@@ -178,18 +178,18 @@
         fill: var(--mermaid-task-background-color);
         stroke: var(--mermaid-task-border-color);
       }
-    
+
       .taskTextOutside0,
       .taskTextOutside2
       {
         fill: var(--mermaid-task-text-outside-color);
       }
-    
+
       .taskTextOutside1,
       .taskTextOutside3 {
         fill: var(--mermaid-task-text-outside-color);
       }
-    
+
       .active0,
       .active1,
       .active2,
@@ -197,14 +197,14 @@
         fill: var(--mermaid-active-task-background-color);
         stroke: var(--mermaid-active-task-border-color);
       }
-    
+
       .activeText0,
       .activeText1,
       .activeText2,
       .activeText3 {
         fill: var(--mermaid-task-text-dark-color) !important;
       }
-    
+
       .done0,
       .done1,
       .done2,
@@ -213,14 +213,14 @@
         fill: var(--mermaid-done-task-background-color);
         stroke-width: 2;
       }
-    
+
       .doneText0,
       .doneText1,
       .doneText2,
       .doneText3 {
         fill: var(--mermaid-task-text-dark-color) !important;
       }
-    
+
       .crit0,
       .crit1,
       .crit2,
@@ -228,7 +228,7 @@
         stroke: var(--mermaid-crit-border-color);
         fill: var(--mermaid-crit-background-color);
       }
-    
+
       .activeCrit0,
       .activeCrit1,
       .activeCrit2,
@@ -236,7 +236,7 @@
         stroke: var(--mermaid-crit-border-color);
         fill: var(--mermaid-active-task-background-color);
       }
-    
+
       .doneCrit0,
       .doneCrit1,
       .doneCrit2,
@@ -244,7 +244,7 @@
         stroke: var(--mermaid-crit-border-color);
         fill: var(--mermaid-done-task-background-color);
       }
-    
+
       .doneCritText0,
       .doneCritText1,
       .doneCritText2,
@@ -255,47 +255,47 @@
       .activeCritText3 {
         fill: var(--mermaid-task-text-dark-color) !important;
       }
-    
+
       .titleText {
         font-size: calc(1rem * 1.333);
         fill: var(taskTextDarkColor);
         font-family: var(--mermaid-font-family);
       }
-    
+
       /* class */
-    
+
       g.classGroup text {
         fill: var(--mermaid-node-border);
         stroke: none;
         font-family: var(--mermaid-font-family);
         font-size: 10px;
       }
-    
+
       .divider {
         stroke: var(--mermaid-node-border);
       }
-    
+
       g.classGroup rect {
         fill: var(--mermaid-node-background);
         stroke: var(--mermaid-node-border);
       }
-    
+
       g.classGroup line {
         stroke: var(--mermaid-node-border);
       }
-    
+
       .classLabel .box {
         fill: var(--mermaid-node-background);
       }
-    
+
       .classLabel .label {
         fill: var(--mermaid-node-border);
       }
-    
+
       .relation {
         stroke: var(--mermaid-line-color);
       }
-    
+
       #compositionStart, .composition,
       #compositionEnd, .composition,
       #dependencyStart, .dependency,
@@ -306,14 +306,14 @@
         stroke: var(--mermaid-line-color) !important;
         stroke-width: 1;
       }
-    
+
       #aggregationStart, .aggregation,
       #aggregationEnd, .aggregation {
         fill: var(--mermaid-node-background) !important;
         stroke: var(--mermaid-line-color) !important;
         stroke-width: 1;
       }
-    
+
       /* git */
       .commit-id,
       .commit-msg,
@@ -322,7 +322,7 @@
         color: lightgrey;
         font-family: var(--mermaid-font-family);
       }
-    
+
       /* pie */
       .pieTitleText {
         text-anchor: middle;
@@ -338,7 +338,7 @@
         fill: var(--mermaid-task-text-dark-color);
         font-size: inherit;
       }
-    
+
       /* state */
       g.stateGroup text {
         fill: var(--mermaid-node-border);
@@ -349,60 +349,60 @@
       g.stateGroup text {
         stroke: none;
         font-size: 10px;
-    
+
       }
       g.stateGroup .state-title {
         font-weight: bolder;
         fill: var(--mermaid-label-color);
       }
-    
+
       g.stateGroup rect {
         fill: var(--mermaid-node-background);
         stroke: var(--mermaid-node-border);
       }
-    
+
       g.stateGroup line {
         stroke: var(--mermaid-line-color);
         stroke-width: 1;
       }
-    
+
       .transition {
         stroke: var(--mermaid-line-color);
         stroke-width: 1;
         fill: none;
       }
-    
+
       .stateGroup .composit {
         fill: white;
       }
-    
+
       .stateGroup .alt-composit {
         fill: #e0e0e0;
       }
-    
+
       .state-note {
         stroke: var(--mermaid-note-border-color);
         fill: var(--mermaid-note-background-color);
       }
-    
+
       .state-note text {
         fill: black;
         font-size: 10px;
       }
-    
+
       .stateLabel .box {
         fill: var(--mermaid-node-background);
       }
-    
+
       .edgeLabel text {
         fill: #333;
       }
-    
+
       .stateLabel text {
         fill: var(--mermaid-label-color);
         font-family: var(--mermaid-font-family);
       }
-    
+
       .node circle.state-start {
         fill: var(--mermaid-line-color);
         stroke: var(--mermaid-line-color);
@@ -414,7 +414,7 @@
       #statediagram-barbEnd {
         fill: var(--mermaid-line-color)
       }
-    
+
       .statediagram-cluster rect {
         stroke: var(--mermaid-node-border);
       }
@@ -434,7 +434,7 @@
         fill: var(--mermaid-note-background-color);
         stroke: var(--mermaid-note-border-color);
       }
-    
+
       /* mermaid */
       .error-icon {
         fill: var(--mermaid-error-background-color);
@@ -477,7 +477,7 @@
         messageFontSize: 12,
         messageFontWeight: 'var(--base-font-weight)',
       },
-    })  
+    })
   }
 
   function ThemeableMermaid(hook, vm) {
