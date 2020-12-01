@@ -31,6 +31,28 @@
       window.document.documentElement.lang = configForPath(path, 'language', defaultLanguage)
     }
 
+    let oldPath
+    hook.ready(() => {
+      oldPath = vm.router.getCurrentPath()
+      vm.router.onchange(({source}) => {
+        const newPath = vm.router.getCurrentPath()
+
+        if (source === 'navigate') {
+          const newLanguage = configForPath(newPath, 'language', defaultLanguage)
+          const newLanguageRoot = newLanguage === defaultLanguage ? '/' : `/${newLanguage}/`
+
+          if (newPath === `${newLanguageRoot}?auto`) {
+            const oldLanguage = configForPath(oldPath, 'language', defaultLanguage)
+            const oldLanguageRoot = oldLanguage === defaultLanguage ? '/' : `/${oldLanguage}/`
+            const path = `${oldPath.slice(oldLanguageRoot.length)}`
+            const url = vm.router.toURL(`${newLanguageRoot}${path}`)
+            window.location.href = url
+          }
+        }
+
+        oldPath = newPath
+      })
+    })
     hook.init(refreshInfo)
     hook.doneEach(refreshInfo)
   }

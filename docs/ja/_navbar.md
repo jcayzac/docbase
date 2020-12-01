@@ -1,1 +1,1 @@
-- [:us: English](/)
+- [:us: English](/?auto)
