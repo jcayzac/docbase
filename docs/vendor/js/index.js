@@ -1,73 +1,69 @@
-'use strict';
+'use strict'
+;(function(window) {
+  const basePath = '/docbase/'
+  const repo = `https://github.com/jcayzac/docbase/`
+  const editBranch = `master`
 
-const basePath = '/julien-cayzac/docsify-template/'
-const repo = `https://ghe.rakuten-it.com${basePath}`
-const editBranch = `master`
+  const defaultLanguage = 'en'
+  const translations = [
+    {
+      language: 'ja',
+      defaultDescription: `一般的な説明`,
+      name: `日本語のタイトル`,
+      search: `検索`,
+    },
 
-/* Disable caching if "?burst" is passed to the URL */
-const cacheBurst = (new URLSearchParams(window.location.search)).has('burst') ? { 'cache-control': 'max-age=0' } : undefined
-if (cacheBurst) console.warn(`CACHE BURST ENABLED`)
+    {
+      language: 'en',
+      defaultDescription: `Some description`,
+      name: `English Title`,
+      search: `Search…`,
+    },
+  ]
 
-window.$docsify = Object.assign(window.$docsify || {}, {
-  basePath,
-  repo,
-  name: '<span lang="en">RPay PWA Platform</span><span lang="ja">楽天ペイPWAサービス</span>',
-  nameLink: {
-    '/ja/': `${basePath}ja/`,
-    '/': basePath,
-  },
-  notFoundPage: {
-    '/': '/_404.md',
-    '/ja': '/ja/_404.md',
-  },
-  fallbackLanguages: ['ja'],
-  auto2top: true,
-  executeScript: true,
-  loadSidebar: true,
-  loadNavbar: true,
-  maxLevel: 4,
-  subMaxLevel: 3,
-  formatUpdated: '{YYYY}-{MM}-{DD} ({HH}:{mm}:{ss})',
-  search: {
-    maxAge: 3600,
-    depth: 3,
-    placeholder: {
-      '/ja/': '検索',
-      '/': 'Search…',
-      }
-  },
-  seo: {
-    description: (route, frontmatter) => {
-      if (route.path?.startsWith('/ja/')) return `一般的な説明`
-      else return `Some default description`
+  /* Disable caching if "?burst" is passed to the URL */
+  const cacheBurst = (new URLSearchParams(window.location.search)).has('burst') ? { 'cache-control': 'max-age=0' } : undefined
+  if (cacheBurst) console.warn(`CACHE BURST ENABLED`)
+
+  window.$docsify = {
+    basePath,
+    repo,
+    defaultLanguage,
+    translations,
+    auto2top: true,
+    executeScript: true,
+    loadSidebar: true,
+    loadNavbar: true,
+    maxLevel: 4,
+    subMaxLevel: 3,
+    search: {
+      maxAge: 3600,
+      depth: 3,
+    },
+    mustache: {
+      noPackage: true,
+    },
+    pagination: {
+      crossChapter: true,
+      crossChapterText: true,
+    },
+    requestHeaders: {
+      ...cacheBurst,
     }
-  },
-  mustache: {
-    noPackage: true,
-    data: [
-      // 'some/file.json',
-    ],
-  },
-  pagination: {
-    crossChapter: true,
-    crossChapterText: true,
-  },
-  requestHeaders: {
-    ...cacheBurst,
-  },
-})
+  }
 
-function editPage(hook, vm) {
-  hook.afterEach(function(html) {
-    const { path, file } = vm.route
-    const label = path.startsWith('ja/') ? `ページの編集` : `Edit Page`
+  function editPage(hook, vm) {
+    hook.afterEach(function(html) {
+      const { path, file } = vm.route
+      const label = path.startsWith('ja/') ? `ページの編集` : `Edit Page`
 
-    return `${html}<a rel="noopener" target="_blank" href="${repo}edit/${editBranch}/docs/${file}">${label}</a>`
-  })
-}
+      return `${html}<a rel="noopener" target="_blank" href="${repo}edit/${editBranch}/docs/${file}">${label}</a>`
+    })
+  }
 
-window.$docsify.plugins = (window.$docsify.plugins || []).concat([
-  editPage,
-])
+  window.$docsify.plugins = (window.$docsify.plugins || []).concat([
+    editPage,
+  ])
 
-navigator.serviceWorker?.register(`${basePath}vendor/js/service-worker.js`)
+  window.navigator.serviceWorker?.register(`${window.$docsify.basePath}vendor/js/service-worker.js`)
+})(this)
