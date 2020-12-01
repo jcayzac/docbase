@@ -9,7 +9,7 @@
     document.querySelector(`meta[name="${name}"]`).content = content || ''
   }
 
-  function plugin(hook, vm) {
+  function Meta(hook, vm) {
     const refreshInfo = () => {
       const { config, route, frontmatter } = vm
       const { description, keywords } = frontmatter || {}
@@ -34,5 +34,5 @@
 
   window.$docsify = window.$docsify || {}
   window.$docsify.plugins = window.$docsify.plugins || []
-  window.$docsify.plugins.push(plugin)
+  window.$docsify.plugins.push(Meta)
 })(this)
