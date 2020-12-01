@@ -16,3 +16,17 @@
   width: 200px;
   height: 200px;
 }
+
+#spinner circle {
+  fill: none;
+  stroke: inherit;
+  stroke-width: 1;
+  opacity: 0;
+  transform-origin: 50%;
+  animation: spinner-size    cubic-bezier(0.165, 0.84, 0.44,  1) 1.8s infinite,
+             spinner-opacity cubic-bezier(0.3,   0.61, 0.355, 1) 1.8s infinite;
+}
+
+#spinner circle:last-child  { animation-delay: 0.9s; }
+@keyframes spinner-size    { 0% { transform: scale(0); } 100% { transform: scale(1); } }
+@keyframes spinner-opacity { 5% { opacity: 1;          } 100% { opacity: 0;          } }

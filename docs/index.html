@@ -28,25 +28,7 @@
 <body>
   <main id="app">
     <div id="spinner">
-      <!-- Based on "Puff" from https://samherbert.net/svg-loaders/ -->
-      <svg viewBox="0 0 14 14">
-        <style>
-          #spinner circle {
-            fill: none;
-            stroke: inherit;
-            stroke-width: 1;
-            opacity: 0;
-            transform-origin: 50%;
-            animation: spinner-size    cubic-bezier(0.165, 0.84, 0.44,  1) 1.8s infinite,
-                       spinner-opacity cubic-bezier(0.3,   0.61, 0.355, 1) 1.8s infinite;
-          }
-          #spinner circle:last-child  { animation-delay: 0.9s; }
-          @keyframes spinner-size    { 0% { transform: scale(0); } 100% { transform: scale(1); } }
-          @keyframes spinner-opacity { 5% { opacity: 1;          } 100% { opacity: 0;          } }
-        </style>
-        <circle cx="7" cy="7" r="6"></circle>
-        <circle cx="7" cy="7" r="6"></circle>
-      </svg>
+      <svg viewBox="0 0 14 14"><circle cx="7" cy="7" r="6"/><circle cx="7" cy="7" r="6"/></svg>
     </div>
   </main>
   <script src="vendor/js/seo.js"></script>
