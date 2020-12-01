@@ -1,5 +1,6 @@
 'use strict'
 ;(function (window) {
+  if (!{'localhost': 1, '127.0.0.1': 1}[window.location.hostname]) { return }
 
   function DebugInfoIfLocalhost(hook, vm) {
     const replacer = () => {
@@ -16,9 +17,8 @@
       }
     }
 
-    hook.afterEach((html) => `${html}
-      <p>Running on localhost. Here's a dump of the VM:</p>
-      <pre style="max-height:90vh;overflow:scroll;background:rgba(0,0,0,.1)"><code class="language-json">${JSON.stringify(vm, replacer(), 2).replace(/</g, '&lt;')}</code></pre>`)
+    hook.beforeEach((content) => console.log(`BEFORE:`, {vm, content}))
+    hook.afterEach((html) => console.log(`AFTER:`, {vm, html}))
   }
 
   window.$docsify = window.$docsify || {}
