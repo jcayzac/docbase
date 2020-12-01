@@ -2,13 +2,15 @@
 ;(function(window) {
   const basePath = '/docbase/'
   const repo = `https://github.com/jcayzac/docbase/`
-  const editBranch = `master`
+  const branch = `main`
+  const path = `docs/`
 
   const defaultLanguage = 'en'
   const translations = [
     {
       language: 'ja',
       defaultDescription: `一般的な説明`,
+      editPage: `ページの編集`,
       name: `日本語のタイトル`,
       search: `検索`,
     },
@@ -16,6 +18,7 @@
     {
       language: 'en',
       defaultDescription: `Some description`,
+      editPage: `Edit Page`,
       name: `English Title`,
       search: `Search…`,
     },
@@ -36,6 +39,10 @@
     loadNavbar: true,
     maxLevel: 4,
     subMaxLevel: 3,
+    edit: {
+      branch,
+      path,
+    },
     search: {
       maxAge: 3600,
       depth: 3,
@@ -51,19 +58,6 @@
       ...cacheBurst,
     }
   }
-
-  function editPage(hook, vm) {
-    hook.afterEach(function(html) {
-      const { path, file } = vm.route
-      const label = path.startsWith('ja/') ? `ページの編集` : `Edit Page`
-
-      return `${html}<a rel="noopener" target="_blank" href="${repo}edit/${editBranch}/docs/${file}">${label}</a>`
-    })
-  }
-
-  window.$docsify.plugins = (window.$docsify.plugins || []).concat([
-    editPage,
-  ])
 
   window.navigator.serviceWorker?.register(`${window.$docsify.basePath}vendor/js/service-worker.js`)
 })(this)
