@@ -8,7 +8,7 @@ description: A brief introduction
 
 !> An awesome project's another page.
 
-Here's some math:
+Here's some math: $a = \frac{b + c}{2}$.
 
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 
