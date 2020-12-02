@@ -8,6 +8,11 @@
     translations.filter(({language}) => language === defaultLanguage).shift()?.[key] ||
     defValue
 
+  const paginationLabel0 = (filter, label) => translations?.filter(filter)?.shift()?.paginate?.[`${label}Label`]
+  const paginationLabel = (label, path) => paginationLabel0(({language}) => path.startsWith(`/${language}/`), label)
+    || paginationLabel0(({language}) => language === defaultLanguage, label)
+    || label
+
   const
     name = translations.map(({language, name}) => `<span lang="${language}">${name}</span>`).join(''),
     nameLink = Object.fromEntries(languagePrefixes.map(x => [`/${x}`, `#/${x}`])),
@@ -15,11 +20,14 @@
     fallbackLanguages = translations.map(x => x.language).filter(x => x !== defaultLanguage),
     formatUpdated = `{YYYY}-{MM}-{DD} ({HH}:{mm}:{ss})`, // TODO
     placeholder = Object.fromEntries(translations.map(({language, search}) => [language === defaultLanguage ? '/' : `/${language}/`, search])),
-    description = (route, _) => configForPath(route.path, 'defaultDescription', '')
+    description = (route, _) => configForPath(route.path, 'defaultDescription', ''),
+    previousLabel = (vm) => paginationLabel('previous', vm.route.path),
+    nextLabel = (vm) => paginationLabel('next', vm.route.path)
 
   window.$docsify = Object.assign(window.$docsify, { name, nameLink, notFoundPage, fallbackLanguages, formatUpdated })
   window.$docsify.search = Object.assign(window.$docsify.search || {}, { placeholder })
   window.$docsify.seo = Object.assign(window.$docsify.seo || {}, { description })
+  window.$docsify.paginate = Object.assign(window.$docsify.paginate || {}, { previousLabel, nextLabel })
 
   // Refresh the <html lang> tag when the route changes
   function HtmlLang(hook, vm) {

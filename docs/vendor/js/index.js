@@ -13,6 +13,10 @@
       editPage: `ページの編集`,
       name: `日本語のタイトル`,
       search: `検索`,
+      paginate: {
+        previousLabel: `前へ`,
+        nextLabel: `次へ`,
+      },
     },
 
     {
@@ -21,6 +25,10 @@
       editPage: `Edit Page`,
       name: `English Title`,
       search: `Search…`,
+      paginate: {
+        previousLabel: `Previous`,
+        nextLabel: `Next`,
+      },
     },
   ]
 
@@ -59,13 +67,9 @@
 				}
 			]
     },
-    pagination: {
-      crossChapter: true,
-      crossChapterText: true,
-    },
     requestHeaders: {
       ...cacheBurst,
-    }
+    },
   }
 
   window.navigator?.serviceWorker?.register(`${window.$docsify.basePath}vendor/js/service-worker.js`)
