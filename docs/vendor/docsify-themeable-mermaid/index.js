@@ -211,6 +211,7 @@
 
   figure.mermaid svg .grid .tick text {
     font-family: var(--mermaid-font-family);
+    fill: currentColor;
   }
 
   figure.mermaid svg .today {
