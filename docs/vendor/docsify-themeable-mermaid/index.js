@@ -54,6 +54,31 @@
     --mermaid-today-line-color: var(--mermaid-secondary-color); /* TODO */
   }
 
+  figure.visual.diagram.mermaid {
+    display: block;
+  }
+
+  figure.mermaid svg {
+    display: block;
+    margin: 0 auto;
+    max-width: calc(1px * var(--mermaid-diagram-width));
+  }
+
+  figure.mermaid svg::before {
+    content: '';
+    width: 1px;
+    margin-left: -1px;
+    float: left;
+    height: 0;
+    padding-top: calc(100% * var(--mermaid-diagram-height) / var(--mermaid-diagram-width));
+  }
+
+  figure.mermaid svg::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
   /* sequence */
   figure.mermaid svg .actor {
     fill: var(--mermaid-actor-background);
@@ -550,7 +575,7 @@
     svg.removeAttribute('height')
     svg.removeAttribute('style')
     svg.querySelectorAll('style').forEach(x => x.parentNode.removeChild(x))
-    svg.style=`width: 100%; max-width: ${viewBox[2]}px; height: auto; padding-top: ${(+viewBox[3]) / (+viewBox[2])}%`
+    container.style=`--mermaid-diagram-height: ${+viewBox[3]}; --mermaid-diagram-width: ${+viewBox[2]}`
 
     return container.outerHTML
   }
