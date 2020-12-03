@@ -47,7 +47,6 @@
     loadNavbar: true,
     maxLevel: 4,
     subMaxLevel: 3,
-    relativePath: true,
     edit: {
       branch,
       path,
