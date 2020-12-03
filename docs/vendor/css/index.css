@@ -30,6 +30,7 @@
   /* code */
   --code-font-family: 'Fira Code', monospace;
   --code-font-weight: 400;
+  --code-font-size: var(--font-size-m);
   --code-tab-size: 2;
   --code-block-padding: 1rem;
   --code-block-margin: 0;
