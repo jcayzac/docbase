@@ -161,6 +161,8 @@ let message = "This is Swift"
 
 <!-- tabs:end -->
 
+`This generic code isn't syntax-highlighted`, but [`/* this inline Swift code is: */ var request = ClientRequest(configuration: "{...JSON configuration...}")` swift].
+
 ## Diagrams
 
 ### Sequence
