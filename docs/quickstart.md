@@ -8,9 +8,77 @@ description: A brief introduction
 
 !> An awesome project's another page.
 
-Here's some math: $a = \frac{b + c}{2}$.
+## Math
+
+Here's some inline math: $a = \frac{b + c}{2}$.
+
+A formula on its own:
 
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
+A multiline block of math:
+
+$$
+\begin{aligned}
+a_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
+\iff a_{n+1} &= a_n + \frac{x_{n+1} - a_n}{n+1}
+\end{aligned}
+$$
+
+Another:
+
+$$
+\begin{aligned}
+x_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
+\iff x_{n+1} &= x_n + \frac{x_{n+1} - x_n}{n+1}
+\end{aligned}
+$$
+
+In a blockquote:
+
+> Here's some inline math: $a = \frac{b + c}{2}$.
+>
+> A formula on its own:
+>
+> $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+>
+> A multiline block of math:
+>
+> $$
+> \begin{aligned}
+> a_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
+> \iff a_{n+1} &= a_n + \frac{x_{n+1} - a_n}{n+1}
+> \end{aligned}
+> $$
+>
+> Another:
+>
+> $$
+> \begin{aligned}
+> x_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
+> \iff x_{n+1} &= x_n + \frac{x_{n+1} - x_n}{n+1}
+> \end{aligned}
+> $$
+
+Only child:
+
+> $$
+> \begin{aligned}
+> x_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
+> \iff x_{n+1} &= x_n + \frac{x_{n+1} - x_n}{n+1}
+> \end{aligned}
+> $$
+
+Another only child:
+
+> $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
+In a table:
+
+| Foo                   | Bar
+| --------------------- | -------
+| $a = \frac{b + c}{2}$ | $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$ |
+| $d = \frac{e + f}{2}$ | $$\sum_{j=0}^m j^2 = \frac{(m^2+m)(2m+1)}{6}$$ |
 
 ## Tabs
 
