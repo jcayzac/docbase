@@ -1,1 +1,2 @@
-- [:us: English](/?auto)
+- 言語：:jp:
+  - [:us:English](/?auto)
