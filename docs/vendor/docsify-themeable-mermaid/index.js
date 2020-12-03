@@ -594,7 +594,7 @@
       const renderer = vm.config.markdown.renderer
       const original = renderer.code || renderer.origin.code
       renderer.code = renderer.origin.code = function(code, lang) {
-        if (lang !== 'mermaid') return original.apply(this, arguments)
+        if (lang !== 'mermaid') return original.apply(renderer, arguments)
 
         let rendered
         mermaid.render(`mermaid-diagram-${++mermaidId}`, code, x => { rendered = processSVG(x) })

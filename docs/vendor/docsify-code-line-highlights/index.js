@@ -37,7 +37,7 @@
         if (options?.highlight !== undefined)
           return `<pre data-line="${options.highlight}" data-lang="${realLang}" class="line-highlight language-${realLang}"><code class="language-${realLang}">${code}</code></pre>`
         else
-          return original.call(this, code, lang)
+          return original.call(renderer, code, lang)
       }
     })
     hook.doneEach(() => Prism.highlightAll())
