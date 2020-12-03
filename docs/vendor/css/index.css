@@ -43,6 +43,9 @@
   /* pagination */
   --pagination-chevron-height: 2rem;
   --pagination-chevron-stroke-width: 3px;
+
+  /* section titles */
+  --sidebar-nav-link-before-content-l3: '§';
 }
 
 @media (prefers-color-scheme: dark) {
