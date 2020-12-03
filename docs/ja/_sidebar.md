@@ -1,6 +1,11 @@
-- はじめよう
+- Getting started
 
-  - [Quick Start](/ja/quickstart.md)
+  - Section 1
+
+    - [Quick Start](/ja/quickstart.md)
+
+  - Section 2
+
     - [Foo](/ja/foo/bar.md)
 
 - Another Section

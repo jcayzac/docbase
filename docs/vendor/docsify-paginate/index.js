@@ -121,7 +121,7 @@
       // The URL of the page being rendered
       const url = new URL(vm.router.toURL(vm.route.path), window.location.href)
       // All the links in the sidebar
-      const allLinks = Array.from(document.querySelectorAll('.sidebar-nav li a'))
+      const allLinks = Array.from(document.querySelectorAll('.sidebar-nav ul:not(.app-sub-sidebar) > li > a'))
       // The <a> element corresponding to the page being rendered, and its index
       const link = allLinks.filter((e) => e.href === url.href).shift()
       const index = allLinks.indexOf(link)
