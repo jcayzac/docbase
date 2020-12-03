@@ -10,13 +10,19 @@ description: A brief introduction
 
 ## Math
 
-Here's some inline math: $a = \frac{b + c}{2}$.
+### Inline
 
-A formula on its own:
+Here's some math: $a = \frac{b + c}{2}$. It's rendered inline.
+
+### Blocks
+
+Here's a formula on its own line, becoming a block element:
 
 $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
 
-A multiline block of math:
+#### Multiline
+
+Here's a block of math whose source spans multiple lines:
 
 $$
 \begin{aligned}
@@ -25,16 +31,28 @@ a_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
 \end{aligned}
 $$
 
-Another:
+### Code
 
+Here is math in a code fence, which is not rendered:
+
+```
 $$
 \begin{aligned}
-x_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
-\iff x_{n+1} &= x_n + \frac{x_{n+1} - x_n}{n+1}
+a_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
+\iff a_{n+1} &= a_n + \frac{x_{n+1} - a_n}{n+1}
 \end{aligned}
 $$
+```
 
-In a blockquote:
+### List Items
+
+Here's the same formula has a list item:
+
+- $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
+
+### Blockquotes
+
+Math in a blockquote:
 
 > Here's some inline math: $a = \frac{b + c}{2}$.
 >
@@ -50,30 +68,10 @@ In a blockquote:
 > \iff a_{n+1} &= a_n + \frac{x_{n+1} - a_n}{n+1}
 > \end{aligned}
 > $$
->
-> Another:
->
-> $$
-> \begin{aligned}
-> x_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
-> \iff x_{n+1} &= x_n + \frac{x_{n+1} - x_n}{n+1}
-> \end{aligned}
-> $$
 
-Only child:
+### Tables
 
-> $$
-> \begin{aligned}
-> x_{n+1} &= \frac{x_{n+1} + nc_n}{n+1} \\
-> \iff x_{n+1} &= x_n + \frac{x_{n+1} - x_n}{n+1}
-> \end{aligned}
-> $$
-
-Another only child:
-
-> $$\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}$$
-
-In a table:
+Math in a table:
 
 | Foo                   | Bar
 | --------------------- | -------
