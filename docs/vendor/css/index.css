@@ -60,3 +60,6 @@ figure.visual {
   justify-content: center;
   break-inside: avoid;
 }
+
+/* remove if you want the corner */
+.github-corner { display: none }
