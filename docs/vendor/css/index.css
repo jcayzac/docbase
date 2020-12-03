@@ -64,3 +64,14 @@ figure.visual {
 
 /* remove if you want the corner */
 .github-corner { display: none }
+
+/* This for dropdown sizes bug */
+.app-nav img.emoji {
+  max-width: unset;
+  margin-top: unset;
+  vertical-align: middle;
+}
+
+/* hide the scrollbar */
+.sidebar { scrollbar-width: none; }
+.sidebar::-webkit-scrollbar { display: none; }
