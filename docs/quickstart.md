@@ -120,6 +120,9 @@ launch {
     useClient(it)
   }
 }
+/**
+ * Code can contain [links](https://github.com/) too!
+ */
 ```
 
 <!-- tab:Swift -->
@@ -141,6 +144,9 @@ request.send { result in
       break
   }
 }
+/**
+ * Code can contain [links](https://github.com/) too!
+ */
 ```
 
 <!-- tabs:end -->
