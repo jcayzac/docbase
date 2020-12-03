@@ -12,8 +12,8 @@
   <meta name="description" content>
   <meta name="keywords" content>
 
+  <link rel="stylesheet" href="https://unpkg.com/katex@0.12.0/dist/katex.min.css" integrity="sha256-tn6hZ2YGDv0w1/DaFL4MiUoXuAVclrtFZs13ch3TB9M" crossorigin="anonymous">
   <style>
-    @import url('https://unpkg.com/katex@0.12.0/dist/katex.min.css');
     @import 'vendor/css/index.css';
   </style>
 </head>
@@ -47,7 +47,8 @@
   <script src="https://unpkg.com/mermaid@8.8.3/dist/mermaid.min.js"                                 integrity="sha256-6gc5qw+D6x9boi0vM05uaTCVBaYVSo5kbl8dEC5wTmk" crossorigin="anonymous"></script>
 
   <script src="https://unpkg.com/docsify@4.11.6/lib/docsify.min.js"                                 integrity="sha256-zTTKqWPEpPgRygl1gorAx8ux6HjMcv+zhnqoPp6XWOU" crossorigin="anonymous"></script>
-  <!-- all the prism stuff needs to come after this -->
+
+  <!-- All the prism stuff needs to come after docsify, which bundles Prism -->
   <script async src="https://unpkg.com/prismjs@1.22.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha256-nm3pvKV5t7rclWD/Di7MOnrT/QL1vNDw2TJkgKfz9rg" crossorigin="anonymous"></script>
   <script async src="https://unpkg.com/prismjs@1.22.0/components/prism-swift.min.js"                      integrity="sha256-OvoX6BAvmCAMzhO3wK4YRJ62MS1Vo83JFyCN6P7ZuXw" crossorigin="anonymous"></script>
   <script async src="https://unpkg.com/prismjs@1.22.0/components/prism-kotlin.min.js"                     integrity="sha256-kZ8Q6WhEJkdYEnWke7Jnfl/TrvvHMNO9vm0zzoEfOTs" crossorigin="anonymous"></script>
