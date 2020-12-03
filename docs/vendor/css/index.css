@@ -8,6 +8,8 @@
 @import 'localized-name.css';
 
 :root {
+  color-scheme: light dark;
+
   /* Make "Crimson Red" the primary color */
   --theme-hue: 0;
   --theme-saturation: 100%;
