@@ -78,3 +78,7 @@ figure.visual {
 /* hide the scrollbar */
 .sidebar { scrollbar-width: none; }
 .sidebar::-webkit-scrollbar { display: none; }
+
+:focus {
+  outline-color: var(--theme-color);
+}
